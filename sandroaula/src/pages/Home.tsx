@@ -3,7 +3,7 @@ import  { useState } from 'react';
 import "../styles/header.css";
 import "../styles/utility.css";
 import Button from "../components/button";
-import Logo from "../assets/Logo.svg";
+import Logo from "../assets/logo.svg";
 import Close from "../assets/close.svg";
 import Menu from "../assets/burger.svg"
 import "../styles/utility.css";
