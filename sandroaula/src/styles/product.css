@@ -1,0 +1,32 @@
+#products {
+    background: var(--light-gray);
+    height: 90vh;
+    display: flex;
+}
+
+.filhos {
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    text-align: center;
+    gap: 1.75rem;
+}
+@media (width >=1280px) {
+    #hero {
+        background: var(--bg-color);
+        border-top: none;
+
+        /* Continua abaixo */
+        >span {
+            position: absolute;
+            top: 0;
+        }
+
+        >img {
+            top: 0;
+            height: 82%;
+            padding-left: 55%;
+        }
+    }
+}

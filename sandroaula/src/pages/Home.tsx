@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import "../styles/header.css";
 import "../styles/utility.css";
 import Button from "../components/button";
@@ -10,6 +10,7 @@ import "../styles/utility.css";
 import HeroRectangleOne from "../assets/images/rectangleOne.png";
 import HeroRectangleTwo from "../assets/images/rectangleTwo.png";
 import "../styles/hero.css";
+import "../styles/product.css";
 
 export default function Header() {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -99,13 +100,29 @@ export default function Header() {
                 </div>
 
             </section>
+
             <section id='products'>
-                        <span>
+                <span className='desktop-only'>
 
-                        </span>
-                        <div className='container content'>
+                </span>
 
-                        </div>
+                <div className='container content'>
+                <h1>Confira abaixo alguns dos nossos produtos!</h1>
+
+                    <div className='desktop'>
+                        <h2>Bolo</h2>
+                    </div>
+                    <div className='filhos'>
+                        <h2>Brigadeiro</h2>
+                    </div>
+                    <div className='filhos'>
+                        <h2>Torta</h2>
+                    </div>
+                    <div className='filhos'>
+                        <h2>Pudim</h2>
+                    </div>
+                </div>
+
             </section>
         </>
     )
