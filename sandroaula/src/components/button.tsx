@@ -4,12 +4,13 @@ import "../styles/button.css";
 interface IButtonProps {
     text: string;
     secondary?: boolean;
-}
-
-export default function Button({ text, secondary }: IButtonProps) {
+    size?: 'small' | 'medium' | 'large';
+  }
+  
+  export default function Button({ text, secondary, size = 'medium' }: IButtonProps) {
     return (
-        <button className={secondary ? "btn-secondary" : "btn-primary"}>
-            {text}
-        </button>
+      <button className={`btn ${secondary ? 'btn-secondary' : 'btn-primary'} btn-${size}`}>
+        {text}
+      </button>
     )
-}
+  }

@@ -1,5 +1,5 @@
 
-import  { useState } from 'react';
+import { useState } from 'react';
 import "../styles/header.css";
 import "../styles/utility.css";
 import Button from "../components/button";
@@ -11,6 +11,15 @@ import HeroRectangleOne from "../assets/images/rectangleOne.png";
 import HeroRectangleTwo from "../assets/images/rectangleTwo.png";
 import "../styles/hero.css";
 import "../styles/product.css";
+import "../styles/footer.css";
+import ProductImage1 from "../assets/images/product1.png";
+import ProductImage2 from "../assets/images/product2.png";
+import ProductImage3 from "../assets/images/product3.png";
+import Facebook from "../assets/facebook-icon.svg";
+import Instagram from "../assets/instagram-icon.svg";
+import Twitter from "../assets/twitter-icon.svg";
+
+
 
 export default function Header() {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -100,30 +109,76 @@ export default function Header() {
                 </div>
 
             </section>
-
-            <section id='products'>
-                <span className='desktop-only'>
-
-                </span>
-
-                <div className='container content'>
-                <h1>Confira abaixo alguns dos nossos produtos!</h1>
-
-                    <div className='desktop'>
-                        <h2>Bolo</h2>
+            <section id='products' className="container py-lg">
+                <h1 className="items-center mb-md">Nossos Produtos Deliciosos</h1>
+                <div className="product-grid">
+                    <div className="product-card">
+                        <img src={ProductImage1} alt="Produto 1" className="product-image" />
+                        <h3>Pudim de Marcujá</h3>
+                        <p>Delicioso pudim feito utilizando da poupa do maracujá</p>
                     </div>
-                    <div className='filhos'>
-                        <h2>Brigadeiro</h2>
+                    <div className="product-card">
+                        <img src={ProductImage2} alt="Produto 2" className="product-image" />
+                        <h3>Bolo de Chocolate</h3>
+                        <p>Bolo de chocolate com cobertura cremosa</p>
                     </div>
-                    <div className='filhos'>
-                        <h2>Torta</h2>
-                    </div>
-                    <div className='filhos'>
-                        <h2>Pudim</h2>
+                    <div className="product-card">
+                        <img src={ProductImage3} alt="Produto 3" className="product-image" />
+                        <h3>Torta de Limão</h3>
+                        <p>Torta de massa crocante recheada com creme de limão</p>
                     </div>
                 </div>
+                <p id='produto-p'>
+                    Descubra o sabor irresistível dos nossos doces artesanais! Cada mordida é uma explosão de felicidade.
+                    Feitos com ingredientes selecionados e muito amor, nossos produtos são perfeitos para adoçar seu dia
+                    ou presentear alguém especial. Experimente agora e se apaixone!
+                </p>
+                <div className='button-container'>
 
+                <Button text="Entre em contato" secondary />
+                </div>
+                   
+           
             </section>
+
+            <footer className="bg-dark text-light py-lg">
+                <div className="container">
+                    <div className="footer-grid">
+                        <div className="footer-column">
+                            <img src={Logo} alt="Logo DonaFrost" width={180} height={50} />
+                            <p className="mt-sm">Doces deliciosos para todos os momentos.</p>
+                        </div>
+                        <div className="footer-column">
+                            <h4>Links Rápidos</h4>
+                            <ul>
+                                <li><a href="#hero">Home</a></li>
+                                <li><a href="#solution">Soluções</a></li>
+                                <li><a href="#testimonials">Depoimentos</a></li>
+                                <li><a href="#pricing">Preços</a></li>
+                            </ul>
+                        </div>
+                        <div className="footer-column">
+                            <h4>Contato</h4>
+                            <p>Rua dos Doces, 123</p>
+                            <p>Cidade Doce - SP</p>
+                            <p>Email: contato@donafrost.com</p>
+                            <p>Tel: (11) 1234-5678</p>
+                        </div>
+                        <div className="footer-column">
+                            <h4>Redes Sociais</h4>
+                            <div className="social-icons">
+                                <a href="#"><img src={Facebook} alt="Facebook" /></a>
+                                <a href="#"><img src={Instagram} alt="Instagram" /></a>
+                                <a href="#"><img src={Twitter} alt="Twitter" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="text-center mt-lg">
+                        <p>&copy; 2023 DonaFrost. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </footer>
+
         </>
     )
 }

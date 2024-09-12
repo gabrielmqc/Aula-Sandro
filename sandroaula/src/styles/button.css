@@ -35,3 +35,8 @@
     color: var(--light-text-color);
     border-color: transparent;
 }
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }

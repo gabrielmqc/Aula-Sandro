@@ -107,3 +107,13 @@ ul {
     --pg-lg: 2rem;
   }
 }
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.button-container .btn {
+  width: auto;
+  min-width: 120px;
+}
