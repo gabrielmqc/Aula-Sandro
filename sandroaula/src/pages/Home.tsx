@@ -178,10 +178,10 @@ export default function Header() {
                         <div className="footer-column">
                             <h4>Redes Sociais</h4>
                             <div className="social-icons">
-                                <a href="#"><img src={Facebook} alt="Facebook" /></a>
-                                <a href="#"><img src={Instagram} alt="Instagram" /></a>
-                                <a href="#"><img src={Twitter} alt="Twitter" /></a>
-                            </div>
+                                <a href="https://pt-br.facebook.com/pages/create" target="_blank" rel="noopener noreferrer"><img src={Facebook} alt="Facebook" /></a>
+                                <a href="https://www.instagram.com/gabriel_mqc?igsh=MWg5aDg1ZnY1NW5oaQ==" target="_blank" rel="noopener noreferrer"><img src={Instagram} alt="Instagram" /></a>
+                                <a href="https://www.google.com/search?sca_esv=c8ddd2c726ef673e&sca_upv=1&rlz=1C1ISCS_pt-PT&q=fuck+you+elon&udm=2&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzKkmbLoRaBPwuLOWGy-L2SeKN5e-RaE9G50f7ELQ-7qM_eWh1264lk7KW_w1d7poKY8FoXLVFyobu_n7brwWzFssyzznMciTouWohlju3iwSe9POrA&sa=X&ved=2ahUKEwjrwOCFjr6IAxUgr5UCHSLjKgMQtKgLegQIDBAB&biw=1920&bih=953&dpr=1#vhid=55nWLnuWBCVPBM&vssid=mosaic" target="_blank" rel="noopener noreferrer"><img src={Twitter} alt="Twitter" /></a>
+                                </div>
                         </div>
                     </div>
                     <div className="text-center mt-lg">
