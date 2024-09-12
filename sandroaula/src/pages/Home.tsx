@@ -35,14 +35,9 @@ export default function Header() {
                                 <a href="#">Home</a>
                             </li>
                             <li>
-                                <a href="#solution">Soluções</a>
+                                <a href="#products">Produtos</a>
                             </li>
-                            <li>
-                                <a href="#testimonials">Depoimentos</a>
-                            </li>
-                            <li>
-                                <a href="#pricing">Preços</a>
-                            </li>
+                        
                             <li>
                                 <a href="#contact">Contato</a>
                             </li>
@@ -63,14 +58,9 @@ export default function Header() {
                                             <a href="#">Home</a>
                                         </li>
                                         <li>
-                                            <a href="#solution">Soluções</a>
+                                            <a href="#products">Produtos</a>
                                         </li>
-                                        <li>
-                                            <a href="#testimonials">Depoimentos</a>
-                                        </li>
-                                        <li>
-                                            <a href="#pricing">Preços</a>
-                                        </li>
+                                    
                                         <li>
                                             <a href="#contact">Contato</a>
                                         </li>
@@ -111,7 +101,7 @@ export default function Header() {
             </section>
             <section id='products' className="container py-lg">
                 <h1 className="items-center mb-md">Nossos Produtos Deliciosos</h1>
-                <div className="product-grid">
+                <div className="product-grid" id='products-cards'>
                     <div className="product-card">
                         <img src={ProductImage1} alt="Produto 1" className="product-image" />
                         <h3>Pudim de Marcujá</h3>
@@ -134,14 +124,14 @@ export default function Header() {
                     ou presentear alguém especial. Experimente agora e se apaixone!
                 </p>
                 <div className='button-container'>
-
-                <Button text="Entre em contato" secondary />
+                 <a href="#contact"><Button text="Entre em contato" secondary/></a>           
+                
                 </div>
                    
            
             </section>
 
-            <footer className="bg-dark text-light py-lg">
+            <footer className="bg-dark text-light py-lg" id="contact">
                 <div className="container">
                     <div className="footer-grid">
                         <div className="footer-column">
@@ -152,9 +142,7 @@ export default function Header() {
                             <h4>Links Rápidos</h4>
                             <ul>
                                 <li><a href="#hero">Home</a></li>
-                                <li><a href="#solution">Soluções</a></li>
-                                <li><a href="#testimonials">Depoimentos</a></li>
-                                <li><a href="#pricing">Preços</a></li>
+                                <li><a href="#products">Produtos</a></li>
                             </ul>
                         </div>
                         <div className="footer-column">
@@ -174,7 +162,7 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="text-center mt-lg">
-                        <p>&copy; 2023 DonaFrost. Todos os direitos reservados.</p>
+                        <p>© 2023 DonaFrost. Todos os direitos reservados.</p>
                     </div>
                 </div>
             </footer>
