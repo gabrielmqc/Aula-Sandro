@@ -37,7 +37,7 @@ export default function Header() {
                             <li>
                                 <a href="#products">Produtos</a>
                             </li>
-                        
+
                             <li>
                                 <a href="#contact">Contato</a>
                             </li>
@@ -60,7 +60,7 @@ export default function Header() {
                                         <li>
                                             <a href="#products">Produtos</a>
                                         </li>
-                                    
+
                                         <li>
                                             <a href="#contact">Contato</a>
                                         </li>
@@ -100,8 +100,11 @@ export default function Header() {
 
             </section>
             <section id='products' className="container py-lg">
+                <div className=''>
+
+                </div>
                 <h1 className="items-center mb-md">Nossos Produtos Deliciosos</h1>
-                <div className="product-grid" id='products-cards'>
+                <div className="product-grid">
                     <div className="product-card">
                         <img src={ProductImage1} alt="Produto 1" className="product-image" />
                         <h3>Pudim de Marcujá</h3>
@@ -124,11 +127,31 @@ export default function Header() {
                     ou presentear alguém especial. Experimente agora e se apaixone!
                 </p>
                 <div className='button-container'>
-                 <a href="#contact"><Button text="Entre em contato" secondary/></a>           
-                
+                    <a href="#contact"><Button text="Entre em contato" secondary /></a>
+
                 </div>
-                   
-           
+
+
+            </section>
+
+            <section id='testimonials' className="bg-light py-lg">
+                <div className="container">
+                    <h2 className="text-center mb-md">O que nossos clientes dizem</h2>
+                    <div className="testimonial-grid">
+                        <div className="testimonial-card">
+                            <p className="testimonial-text">"Os doces da DonaFrost são simplesmente divinos! Sempre peço para eventos especiais e todos adoram."</p>
+                            <h4 className="testimonial-name">Maria Silva</h4>
+                        </div>
+                        <div className="testimonial-card">
+                            <p className="testimonial-text">"Qualidade excepcional e sabor inigualável. DonaFrost é minha escolha número um para satisfazer minha vontade de doces!"</p>
+                            <h4 className="testimonial-name">João Santos</h4>
+                        </div>
+                        <div className="testimonial-card">
+                            <p className="testimonial-text">"Atendimento impecável e produtos sempre frescos. Recomendo a todos os amantes de doces!"</p>
+                            <h4 className="testimonial-name">Ana Oliveira</h4>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <footer className="bg-dark text-light py-lg" id="contact">
