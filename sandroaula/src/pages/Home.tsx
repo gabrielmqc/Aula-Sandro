@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "../styles/header.css";
 import "../styles/utility.css";
 import Button from "../components/button";
@@ -11,10 +11,14 @@ import HeroRectangleOne from "../assets/images/rectangleOne.png";
 import HeroRectangleTwo from "../assets/images/rectangleTwo.png";
 import "../styles/hero.css";
 import "../styles/product.css";
+import "../styles/testimonial.css"
 import "../styles/footer.css";
 import ProductImage1 from "../assets/images/product1.png";
 import ProductImage2 from "../assets/images/product2.png";
 import ProductImage3 from "../assets/images/product3.png";
+import LeoImage from "../assets/images/leoImage.png";
+import JoaoImage from "../assets/images/joaoProfundo.png";
+import Ninguem from "../assets/images/ninguem.png";
 import Facebook from "../assets/facebook-icon.svg";
 import Instagram from "../assets/instagram-icon.svg";
 import Twitter from "../assets/twitter-icon.svg";
@@ -23,6 +27,24 @@ import Twitter from "../assets/twitter-icon.svg";
 
 export default function Header() {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+    useEffect(() => {
+        const body = document.body;
+        if (showMobileMenu) {
+            body.style.overflow = 'hidden';
+            body.style.position = 'fixed';
+            body.style.width = '100%';
+        } else {
+            body.style.overflow = 'auto';
+            body.style.position = 'static';
+        }
+
+        return () => {
+            body.style.overflow = 'auto';
+            body.style.position = 'static';
+        };
+    }, [showMobileMenu])
+    
     return (
         <>
             <header className="container py-sm">
@@ -37,7 +59,9 @@ export default function Header() {
                             <li>
                                 <a href="#products">Produtos</a>
                             </li>
-
+                            <li>
+                                <a href="#testimonials">Relatos</a>
+                            </li>
                             <li>
                                 <a href="#contact">Contato</a>
                             </li>
@@ -100,9 +124,7 @@ export default function Header() {
 
             </section>
             <section id='products' className="container py-lg">
-                <div className=''>
 
-                </div>
                 <h1 className="items-center mb-md">Nossos Produtos Deliciosos</h1>
                 <div className="product-grid">
                     <div className="product-card">
@@ -136,18 +158,21 @@ export default function Header() {
 
             <section id='testimonials' className="bg-light py-lg">
                 <div className="container">
-                    <h2 className="text-center mb-md">O que nossos clientes dizem</h2>
+                    <h1 className="text-center mb-md">O que nossos clientes dizem</h1>
                     <div className="testimonial-grid">
                         <div className="testimonial-card">
                             <p className="testimonial-text">"Os doces da DonaFrost são simplesmente divinos! Sempre peço para eventos especiais e todos adoram."</p>
+                            <img src={Ninguem} alt="Joao Image" className="testimonial-image" />
                             <h4 className="testimonial-name">Maria Silva</h4>
                         </div>
                         <div className="testimonial-card">
                             <p className="testimonial-text">"Qualidade excepcional e sabor inigualável. DonaFrost é minha escolha número um para satisfazer minha vontade de doces!"</p>
+                            <img src={JoaoImage} alt="Joao Image" className="testimonial-image" />
                             <h4 className="testimonial-name">João Santos</h4>
                         </div>
                         <div className="testimonial-card">
                             <p className="testimonial-text">"Atendimento impecável e produtos sempre frescos. Recomendo a todos os amantes de doces!"</p>
+                            <img src={LeoImage} alt="Leo Image" className="testimonial-image" />
                             <h4 className="testimonial-name">Ana Oliveira</h4>
                         </div>
                     </div>
@@ -158,7 +183,7 @@ export default function Header() {
                 <div className="container">
                     <div className="footer-grid">
                         <div className="footer-column">
-                            <img src={Logo} alt="Logo DonaFrost" width={180} height={50} />
+                            <img src={Logo} alt="Logo Totoya" width={180} height={50} />
                             <p className="mt-sm">Doces deliciosos para todos os momentos.</p>
                         </div>
                         <div className="footer-column">
@@ -166,13 +191,14 @@ export default function Header() {
                             <ul>
                                 <li><a href="#hero">Home</a></li>
                                 <li><a href="#products">Produtos</a></li>
+                                <li><a href="#testimonials">Relatos</a></li>
                             </ul>
                         </div>
                         <div className="footer-column">
                             <h4>Contato</h4>
                             <p>Rua dos Doces, 123</p>
                             <p>Cidade Doce - SP</p>
-                            <p>Email: contato@donafrost.com</p>
+                            <p>Email: contato@totoya.com</p>
                             <p>Tel: (11) 1234-5678</p>
                         </div>
                         <div className="footer-column">
@@ -181,11 +207,11 @@ export default function Header() {
                                 <a href="https://pt-br.facebook.com/pages/create" target="_blank" rel="noopener noreferrer"><img src={Facebook} alt="Facebook" /></a>
                                 <a href="https://www.instagram.com/gabriel_mqc?igsh=MWg5aDg1ZnY1NW5oaQ==" target="_blank" rel="noopener noreferrer"><img src={Instagram} alt="Instagram" /></a>
                                 <a href="https://www.google.com/search?sca_esv=c8ddd2c726ef673e&sca_upv=1&rlz=1C1ISCS_pt-PT&q=fuck+you+elon&udm=2&fbs=AEQNm0AuaLfhdrtx2b9ODfK0pnmi046uB92frSWoVskpBryHTtShVNbk-60xlcGTvYzJ-DKSTGtJjS2FjB5pmTql0ubRQcrur8VCNRNtkKdC3ObBzKkmbLoRaBPwuLOWGy-L2SeKN5e-RaE9G50f7ELQ-7qM_eWh1264lk7KW_w1d7poKY8FoXLVFyobu_n7brwWzFssyzznMciTouWohlju3iwSe9POrA&sa=X&ved=2ahUKEwjrwOCFjr6IAxUgr5UCHSLjKgMQtKgLegQIDBAB&biw=1920&bih=953&dpr=1#vhid=55nWLnuWBCVPBM&vssid=mosaic" target="_blank" rel="noopener noreferrer"><img src={Twitter} alt="Twitter" /></a>
-                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="text-center mt-lg">
-                        <p>© 2023 DonaFrost. Todos os direitos reservados.</p>
+                        <p>© 2023 Totoya. Todos os direitos reservados.</p>
                     </div>
                 </div>
             </footer>

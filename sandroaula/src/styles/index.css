@@ -112,7 +112,9 @@ ul {
   justify-content: center;
   margin-top: 1rem;
 }
-
+body.no-scroll {
+  overflow: hidden;
+}
 .button-container .btn {
   width: auto;
   min-width: 120px;
