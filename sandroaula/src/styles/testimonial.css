@@ -26,6 +26,11 @@
     margin-bottom: 1rem;
 }
 
+#testimonials h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 .testimonial-name {
     font-weight: bold;
 }

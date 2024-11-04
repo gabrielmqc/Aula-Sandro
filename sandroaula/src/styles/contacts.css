@@ -1,0 +1,81 @@
+#contacts h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+#contacts{
+    background-color: #FFBC58;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 500px;
+    
+}
+#contacts header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.contact-form input[type="email"] {
+    flex: 1;
+    padding: 18px 24px;
+    border: 1px solid #ccc;
+    border-right: none; /* Remove borda do lado direito */
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="email"]:focus {
+    border-color: var(--primary-color);
+}
+
+.contact-form input::placeholder {
+    color: #999;
+}
+
+.contact-form button {
+    padding: 15px 20px;
+    color: white;
+    border-radius: 0 8px 8px 0; /* Bordas arredondadas no lado direito */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 500px) {
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .contact-form input[type="email"], .contact-form button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import "../styles/header.css";
 import "../styles/utility.css";
@@ -13,6 +12,7 @@ import "../styles/hero.css";
 import "../styles/product.css";
 import "../styles/testimonial.css"
 import "../styles/footer.css";
+import "../styles/contacts.css";
 import ProductImage1 from "../assets/images/product1.png";
 import ProductImage2 from "../assets/images/product2.png";
 import ProductImage3 from "../assets/images/product3.png";
@@ -44,7 +44,7 @@ export default function Header() {
             body.style.position = 'static';
         };
     }, [showMobileMenu])
-    
+
     return (
         <>
             <header className="container py-sm">
@@ -123,9 +123,12 @@ export default function Header() {
                 </div>
 
             </section>
+            
             <section id='products' className="container py-lg">
 
-                <h1 className="items-center mb-md">Nossos Produtos Deliciosos</h1>
+                <h2>Nossos Produtos Deliciosos</h2>
+
+
                 <div className="product-grid">
                     <div className="product-card">
                         <img src={ProductImage1} alt="Produto 1" className="product-image" />
@@ -156,9 +159,24 @@ export default function Header() {
 
             </section>
 
+            <section id='contacts'>
+                <header >
+                    <h2>Entre em contato</h2>
+                    <p>Ficou interessado em algum produto? Nos informe seu email para podermos entrar em contato!</p>
+                </header>
+                <div className="contact-form">
+                    <form>
+                        <div className="input-container">
+                            <input type="email" placeholder="Seu email" required />
+                            <Button text='Enviar'></Button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
             <section id='testimonials' className="bg-light py-lg">
                 <div className="container">
-                    <h1 className="text-center mb-md">O que nossos clientes dizem</h1>
+                    <h2>O que nossos clientes dizem</h2>
                     <div className="testimonial-grid">
                         <div className="testimonial-card">
                             <p className="testimonial-text">"Os doces da DonaFrost são simplesmente divinos! Sempre peço para eventos especiais e todos adoram."</p>
