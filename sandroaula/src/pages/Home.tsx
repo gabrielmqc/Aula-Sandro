@@ -5,25 +5,29 @@ import Products from "../components/products";
 import Contacts from "../components/contacts";
 import Testimonials from "../components/testimonials";
 import Footer from "../components/footer";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
+const queryClient = new QueryClient()
 
 export default function Home() {
 
     return (
         <>
-            <Header />
+            <QueryClientProvider client={queryClient}>
 
-            <Hero />
+                <Header />
 
-            <Products />
+                <Hero />
 
-            <Contacts />
+                <Products />
 
-            <Testimonials />
+                <Contacts />
 
-            <Footer />
+                <Testimonials />
 
-
+                <Footer />
+            </QueryClientProvider >
         </>
+
     )
 }

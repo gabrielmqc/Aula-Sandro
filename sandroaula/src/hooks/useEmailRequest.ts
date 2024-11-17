@@ -1,17 +1,24 @@
 import { EmailRequest } from "../@types/EmailRequest";
-import axios from "axios";
+import axios, { AxiosPromise } from "axios";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-export const sendEmail = async (data: EmailRequest) => {
-    try {
-        const response = await axios.post('https://us-central1-project-arch-lambda.cloudfunctions.net/function-1', data, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${import.meta.env.VITE_AUTH_TOKEN}`
-            }
-        });
-        return response.data;
-    } catch (error) {
-        console.error('Error sending email:', error);
-        throw error;
-    }
+const TOKEN = "";
+
+const sendEmailRequest = async (novoEmail: EmailRequest): AxiosPromise<EmailRequest> => {
+  return axios.post('/api/function-1', novoEmail, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${TOKEN}`
+    },
+  });
 };
+
+export function useEmailRequest() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: sendEmailRequest,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['email-request'] });
+    },
+  });
+}
