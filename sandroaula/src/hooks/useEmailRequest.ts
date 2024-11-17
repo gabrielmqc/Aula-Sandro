@@ -2,6 +2,7 @@ import { EmailRequest } from "../@types/EmailRequest";
 import axios, { AxiosPromise } from "axios";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
+//comando para gerar o token: gcloud auth print-identity-token
 const TOKEN = "";
 
 const sendEmailRequest = async (novoEmail: EmailRequest): AxiosPromise<EmailRequest> => {
